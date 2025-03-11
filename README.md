@@ -34,7 +34,15 @@ Dummy List of names that will be used by PowerShell Script to create and Add Use
   <p> - Loops through the user list and and iterates each user in the list to automate handling multiple users </p>
 
  <P> 4.) $first = $n.Split(" ")[0].ToLower() $last = $n.Split(" ")[1].ToLower()
-      - Splits the full name into first and last name to create a consistent format
+      <p> - Splits the full name into first and last name to create a consistent format</p>
+      
+  <p> 5.) $username = "$($first.Substring(0,1))$($last)".ToLower()</p> 
+
+   <p> -Creates username by combining the first letter of the firstname with the last name essential for user identification </p>
+
+   <p> 6.)                    </p>
+
+
 
 <h2>Environments Used </h2>
 
