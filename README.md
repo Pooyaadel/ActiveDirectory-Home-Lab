@@ -1,6 +1,6 @@
 <h1> Active Directory Home Lab <h1/>
 <h2>Description</h2>
-Project consists of using VirtualBox to set up a HomeLab Environment to practice running Active Directory, Configuring DHCP for the Domain Controller, Adding users to AD through a Powershell Script, and lasty joining in the Domain (DC) with the client server machine.
+I set up a HomeLab environment using VirtualBox to practice running Active Directory. This involved configuring DHCP for the Domain Controller, adding users to AD through a pre-set PowerShell script for educational purposes, and joining a client server machine to the Domain. This project demonstrates my proactive approach to learning and my commitment to enhancing my technical skills.
 <br />
 
 
