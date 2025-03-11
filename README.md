@@ -6,8 +6,35 @@ I set up a HomeLab environment using VirtualBox to practice running Active Direc
 
 <h2>Languages Used</h2>
 
-- <b>PowerShell</b> 
+- <b>PowerShell</b>
 
+ <p align="center">
+Powershell Script to Use:
+<img src= "https://i.imgur.com/mYPAEwy.png"/>
+
+
+<p align="center">
+Dummy List of names that will be used by PowerShell Script to create and Add Users:
+<img src= "https://i.imgur.com/VJqFz9A.png"/>
+
+
+<h2>What Exactly does the powershell script do?</h2>
+  <p>For Learning purposes, I utilized a pre-made PowerShell Script found online and incorporated it into my Home Lab for Active Directory Purposes </p>
+
+
+
+
+ <p> 1.) $password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
+<p> - Converts a password into a secure string which ensures that sensitive information is being handled properly </p>
+
+ <p> 2.) New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false
+ <p> - Creates an Organzational Unit(OU) and organizes users into a speciic containter streamlining policy and user management</p>
+
+ <p> 3.) foreach ($n in $USER_FIRST_LAST_LIST) {
+  <p> - Loops through the user list and and iterates each user in the list to automate handling multiple users </p>
+
+ <P> 4.) $first = $n.Split(" ")[0].ToLower() $last = $n.Split(" ")[1].ToLower()
+      - Splits the full name into first and last name to create a consistent format
 
 <h2>Environments Used </h2>
 
