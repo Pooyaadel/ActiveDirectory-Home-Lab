@@ -18,12 +18,12 @@ Dummy List of names that will be used by PowerShell Script to create and Add Use
 <img src= "https://i.imgur.com/VJqFz9A.png"/>
 
 
-<h2>What Exactly does the powershell script do?</h2>
-  <p>For Learning purposes, I utilized a pre-made PowerShell Script found online and incorporated it into my Home Lab for Active Directory Purposes </p>
+[<h2>What Exactly does the powershell script do?</h2>
+  <p>For Learning purposes, I utilized a pre-made PowerShell Script found online and incorporated it into my Home Lab for Active Directory purposes and to gain a better understanding how Powershell Scripting enables automation and simplifies system management within a companies I.T infastructure. </p>
 
 
 
-
+[[](url)
  <p> 1.) $PASSWORD_FOR_USERS = "Password1"
 <p> - This sets a default password (Password1) for all the users being created simplifyting the process of setting up multiple users with the same initial password. </p>
 
@@ -44,8 +44,32 @@ Dummy List of names that will be used by PowerShell Script to create and Add Use
 
    <p> 6.)  $first = $n.Split(" ")[0].ToLower()
             $last = $n.Split(" ")[1].ToLower()             </p>
-   <p>                                                      </p>
+   <p> - For each name in the list, the script splits the string into two parts using the space character. $first stores the first name (converted to lowercase) and $last stores the last name (converted to lowercase).
+         This step ensures that the script can handle names consistently, regardless of how they are formatted in the initial input.
+   </p>
+]
+   [<P> 7.) $username = "$($first.Substring(0,1))$($last)".ToLower()  </P>
+   <P> This line generates a username by combining the first letter of the first name ( $first.Substring(0,1)) with the full name ($last). This helps create a simplified username format that helps ensure overall consistency for user managment                               </P>
 
+ [  <p> 8.)Write-Host "Creating user: $($username)" -BackgroundColor Black -ForegroundColor Cyan
+   
+   </p>
+
+   <p> - This line outputs a message to the host console indicating that a user is being created. The message includes the username and is displayed with a black background and cyan text. By displaying the feedback to the console, it makes it easier to track progress and debug if neccessary. 
+](url)
+   </p>
+
+   [<p> 9.)     New-AdUser -AccountPassword $password `
+           -GivenName $first `
+           -Surname $last `
+           -DisplayName $username `
+           -Name $username `
+           -EmployeeID $username `
+           -PasswordNeverExpires $true `
+           -Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
+           -Enabled $true                                         </p>
+   <p> This command creates a new user in active directory with the following attributes : Sets the user's password, Sets the user's first name, Sets the user's last name, Sets the display name (usually the username), Sets the name of the user object in AD, Sets the employee ID (using the username as a placeholder), Ensures the password does not expire,  Places the user in the _USERS` OU. This is a crucial part of the script that can be seen as the backbone as it creates users in active directory with specified attributes.                                                          </p>
+  ]
 
 
 <h2>Environments Used </h2>
